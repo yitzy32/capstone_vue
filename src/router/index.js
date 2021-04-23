@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import UsersSignup from '../views/UsersSignup.vue'
 import PantryItemNew from '../views/PantryItemNew.vue'
 
 Vue.use(VueRouter)
@@ -10,6 +11,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/users',
+    name: 'UsersSignup',
+    component: UsersSignup
   },
   {
     path: '/pantry_items/new',
