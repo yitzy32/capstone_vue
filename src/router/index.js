@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import PantryItemNew from '../views/PantryItemNew.vue'
 
 Vue.use(VueRouter)
 
@@ -9,6 +10,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/pantry_items/new',
+    name: 'PantryItemNew',
+    component: PantryItemNew
   },
   {
     path: '/about',
