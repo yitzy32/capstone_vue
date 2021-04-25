@@ -8,7 +8,6 @@
       <p> name: <input type="text" v-model="newName"></p>
       <p> ingredient id: <input type="text" v-model="newIngredientId"></p>
       <p> measurement in ml: <input type="text" v-model="newMeasurementInMl"></p>
-      <p> user id: <input type="text" v-model="newUserId"></p>
       <p> number of: <input type="text" v-model="newNumberOf"></p>
       <p><input type="submit"> <br/><br/>ADD ITEM</p>
     </form>

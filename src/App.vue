@@ -6,6 +6,7 @@
       <router-link to="/signup">Signup</router-link> |
       <router-link to="/login">Login</router-link> |
       <router-link to="/logout">Logout</router-link> |
+      <router-link to="/pantry_items">All Pantry Items</router-link> |
     </div>
     <router-view/>
   </div>
@@ -33,3 +34,5 @@
   color: #42b983;
 }
 </style>
+<script>
+</script>
