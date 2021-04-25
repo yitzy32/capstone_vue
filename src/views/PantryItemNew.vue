@@ -1,16 +1,24 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
+
+    <form v-on:submit.prevent="newIngredient()">
+      <label for="">Please enter name of your ingredient</label>
+      <input type="text" v-model="newIngredientName">
+      <input type="submit">
+    </form>
+
     <form v-on:submit.prevent="newPantryItem()">
       <small v-for="error in errors">
         {{ error }}
       </small>
-      <p> name: <input type="text" v-model="newName"></p>
-      <p> ingredient id: <input type="text" v-model="newIngredientId"></p>
+      <p> name: <p v-model="newIngredientName"></p></p>
       <p> measurement in ml: <input type="text" v-model="newMeasurementInMl"></p>
       <p> number of: <input type="text" v-model="newNumberOf"></p>
-      <p><input type="submit"> <br/><br/>ADD ITEM</p>
+      <p>ADD ITEM</p>
+      <p><input type="submit"> <br/><br/></p>
     </form>
+
   </div>
 </template>
 
@@ -24,11 +32,10 @@ export default {
   data: function () {
     return {
       message: "NEW PANTRY ITEM",
+      newIngredientName: "",
       newIngredientId: "",
       newMeasurementInMl: "",
-      newUserId: "",
       newNumberOf: "",
-      newName: "",
       errors: [],
     };
   },
@@ -36,12 +43,25 @@ export default {
     console.log("connected successfulllllyyyyy!");
   },
   methods: {
+    newIngredient: function () {
+      console.log("adding ingredient");
+
+      var params = {
+        name: this.newIngredientName,
+      };
+      axios.post("/api/ingredients", params).then((response) => {
+        console.log(response.data);
+        console.log(response.data.id);
+        this.newIngredientId = response.data.id;
+      });
+    },
+
     newPantryItem: function () {
       console.log("in new pantry item");
+
       var params = {
         ingredient_id: this.newIngredientId,
         measurement_in_ml: this.newMeasurementInMl,
-        user_id: this.newUserId,
         number_of: this.newNumberOf,
         name: this.newName,
       };
@@ -59,3 +79,5 @@ export default {
   },
 };
 </script>
+
+// save ingredient in db
