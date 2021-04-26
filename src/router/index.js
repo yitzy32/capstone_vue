@@ -6,6 +6,7 @@ import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import PantryItemNew from '../views/PantryItemNew.vue'
 import PantryItemsIndex from '../views/PantryItemsIndex.vue'
+import RecipesIndex from '../views/RecipesIndex.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ const routes = [
     path: '/pantry_items/new',
     name: 'PantryItemNew',
     component: PantryItemNew
+  },
+  {
+    path: '/recipes',
+    name: 'RecipesIndex',
+    component: RecipesIndex
   },
   {
     path: '/about',
