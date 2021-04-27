@@ -7,6 +7,7 @@
       <router-link to="/login">Login</router-link> |
       <router-link to="/logout">Logout</router-link> |
       <router-link to="/pantry_items">All Pantry Items</router-link> |
+      <router-link to="/recipes">All Recipes</router-link> |
     </div>
     <router-view/>
   </div>

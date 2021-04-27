@@ -1,8 +1,12 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
-    <button v-on:click="getRecipes()">recipes</button>
-    <div v-for="recipe in recipes">{{ recipe.title }}</div>
+    <a href="/recipes/new"><button v-on:click=""> Add New Recipe</button></a>
+    <div v-for="recipe in recipes">
+      {{ recipe.title }}
+      <router-link v-bind:to="`/recipes/${recipe.id}`">{{ recipe.title }}</router-link>
+
+    </div>
   </div>
 </template>
 

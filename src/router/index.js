@@ -6,7 +6,9 @@ import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import PantryItemNew from '../views/PantryItemNew.vue'
 import PantryItemsIndex from '../views/PantryItemsIndex.vue'
+import RecipeCreate from '../views/RecipeCreate.vue'
 import RecipesIndex from '../views/RecipesIndex.vue'
+import RecipeShow from '../views/RecipeShow.vue'
 
 Vue.use(VueRouter)
 
@@ -45,6 +47,16 @@ const routes = [
     path: '/recipes',
     name: 'RecipesIndex',
     component: RecipesIndex
+  },
+  {
+    path: '/recipes/new',
+    name: 'RecipeCreate',
+    component: RecipeCreate
+  },
+  {
+    path: '/recipes/:id',
+    name: 'RecipeShow',
+    component: RecipeShow
   },
   {
     path: '/about',
