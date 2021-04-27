@@ -4,9 +4,8 @@
     Title: {{ recipe.title }} <br>
     Prep time: {{ recipe.prep_time }} <br>
     Srevings: {{ recipe.servings }} <br>
-    
-    <!-- <div v-for="ingredient in ingredients"></div>
-    {{ ingredient.name }} -->
+
+    <button v-on:click="makeRecipe()">Make This Recipe</button>
   </div>
 </template>
 
@@ -31,6 +30,12 @@ export default {
       axios.get("/api/recipes/" + this.$route.params.id).then((response) => {
         console.log(response.data);
         this.recipe = response.data;
+      });
+    },
+    makeRecipe: function () {
+      console.log("making recipe. subtracting items...");
+      axios.patch("/api/recipes/" + this.$route.params.id).then((response) => {
+        console.log(response.data);
       });
     },
   },
