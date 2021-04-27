@@ -36,6 +36,7 @@ export default {
       console.log("making recipe. subtracting items...");
       axios.patch("/api/recipes/" + this.$route.params.id).then((response) => {
         console.log(response.data);
+        this.$router.push("/pantry_items");
       });
     },
   },
