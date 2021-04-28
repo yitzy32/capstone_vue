@@ -1,6 +1,32 @@
 <template>
   <div class="signup">
-    <form v-on:submit.prevent="submit()">
+    <h1>Signup</h1>
+      <form v-on:submit.prevent="submit()">
+        <div class="fields">
+          <div class="field whole">
+            <input type="text" name="name" id="name" placeholder="Name" v-model="name"/>
+          </div>
+          <div class="field whole">
+            <input type="email" name="email" id="email" placeholder="Email" v-model="email"/>
+          </div>
+          <div class="field whole">
+            <input type="password" name="password" id="password" placeholder="Password" v-model="password"/>
+          </div>
+          <div class="field whole">
+            <input type="password" name="password" id="password-confirmation" placeholder="Password Confirmation" v-model="passwordConfirmation"/>
+          </div>
+          
+        </div>
+        <ul class="actions">
+          <li><input type="submit" value="Signup" class="primary" /></li>
+        </ul>
+      </form>
+    
+    
+    
+    
+    
+    <!-- <form v-on:submit.prevent="submit()">
       <h1>Signup</h1>
       <ul>
         <li class="text-danger" v-for="error in errors" v-bind:key="error">
@@ -24,7 +50,7 @@
         <input type="password" class="form-control" v-model="passwordConfirmation">
       </div>
       <input type="submit" class="btn btn-primary" value="Submit">
-    </form>
+    </form> -->
   </div>
 </template>
 
