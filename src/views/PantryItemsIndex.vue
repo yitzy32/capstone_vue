@@ -1,10 +1,11 @@
 <template>
-  <div class="home">
+  <div class="pantry-items-index">
     <h1>{{ message }}</h1>
     <a href="/pantry_items/new"><button>Add An Item To Your Pantry</button></a> <br><hr><br> 
       <div v-for="pantryItem in pantryItems">
-        <b>Name:</b> {{ pantryItem.name }} <br>
-        <b>Measurement In Ml:</b> {{ pantryItem.measurement_in_ml }}
+        <div>You Have: <b>{{ pantryItem.measurement_in_ml }}</b> Milliliters of <b>{{ pantryItem.name }}</b></div>
+        <br>
+        You Have {{ pantryItem.number_of }} {{ pantryItem.name }} 
         <hr>
       </div>
   </div>
@@ -18,7 +19,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Welcome to Pantry Item Index",
+      message: "Welcome! These Are The Items In Your Pantry",
       pantryItems: [],
     };
   },

@@ -5,7 +5,7 @@
 
         <!-- Logo -->
           <a href="/" class="logo">
-            <span class="symbol"><img src="images/cabinet.png" alt="cabinet" /></span><span class="title">Cabinet Keeper</span>
+            <span class="symbol"><img src="images/cabinet.png" alt="" /></span><span class="title">Cabinet Keeper</span>
           </a>
 
         <!-- Nav -->
@@ -18,19 +18,20 @@
       </div>
     </header>
 
-          <!-- Menu -->
-          <nav id="menu">
-            <h2>Menu</h2>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/signup">Sign Up</a></li>
-              <li><a href="/sessions">Login</a></li>
-              <li><a href="/pantry_items">My Pantry Items</a></li>
-              <li><a href="/recipes">My Recipes</a></li>
-              <li><a href="/logout">Consequat dolor</a></li>
-              <li><a href="elements.html">Elements</a></li>
-            </ul>
-          </nav>
+    <!-- Menu -->
+    <nav id="menu">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/pantry_items">My Pantry Items</a></li>
+        <li><a href="/recipes">My Recipes</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <li><a href="elements.html">Elements</a></li>
+      </ul>
+    </nav>
+          
     <router-view/>
     
     <!-- Footer -->
@@ -78,6 +79,9 @@
 </template>
 
 <style>
+.centered-text {
+  text-align: center;
+}
 </style>
 <script>
 </script>
