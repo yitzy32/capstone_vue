@@ -2,21 +2,21 @@
   <div class="home">
     <h1>{{ message }}</h1>
 
-    <form v-on:submit.prevent="newIngredient()">
-      <label for="">Please enter name of your ingredient</label>
-      <input type="text" v-model="newIngredientName">
-      <input type="submit">
+    <form v-on:submit.prevent="newIngredient()" class="centered-text">
+      <label for="">Ingredient Name</label>
+      <input type="text" v-model="newIngredientName" class="centered-text">
+      <input type="submit" value="ADD IGREDIENT NAME" class="button primary fit">
     </form>
 
-    <form v-on:submit.prevent="newPantryItem()">
+    <form v-on:submit.prevent="newPantryItem()" class="centered-text">
       <small v-for="error in errors">
         {{ error }}
       </small>
-      <p> name: <p v-model="newIngredientName"></p></p>
-      <p> measurement in ml: <input type="text" v-model="newMeasurementInMl"></p>
-      <p> number of: <input type="text" v-model="newNumberOf"></p>
+      <!-- <p> name: <p v-model="newIngredientName"></p></p> -->
+      <p> How Many Milliliters: <input type="text" v-model="newMeasurementInMl"></p>
+      <p> Or Number Of: <small>(like for eggs or apples..)</small> <input type="text" v-model="newNumberOf"></p>
       <p>ADD ITEM</p>
-      <p><input type="submit"> <br/><br/></p>
+      <p><input type="submit" value="ADD THIS TO YOUR PANTRY" class="button primary fit"> <br/><br/></p>
     </form>
 
   </div>

@@ -1,24 +1,24 @@
 <template>
-  <div class="home">
+  <div class="recipe-index">
     <h1>{{ message }}</h1>
+    <div v-for="recipe in recipes" class="text-background">
+      
+      <router-link v-bind:to="`/recipes/${recipe.id}`">
+        <span class="recipe-show-link">{{ recipe.title }}</span> 
+      </router-link>
+    </div> <br><br><br><br><br><br><br><br>
     <a href="/recipes/new"><button class="button primary fit"> Add New Recipe</button></a>
-    <div v-for="recipe in recipes">
-      {{ recipe.title }}
-      <router-link v-bind:to="`/recipes/${recipe.id}`">{{ recipe.title }}</router-link>
-
-    </div>
   </div>
 </template>
 
 <style>
 </style>
-
 <script>
 import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "All Recipes",
+      message: "All Your Recipes",
       recipes: [],
     };
   },

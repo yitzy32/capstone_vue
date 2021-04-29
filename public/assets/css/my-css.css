@@ -1,0 +1,96 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+  padding-left: 50px;
+  padding-top: 20px;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.recipe-create {
+  background-image: url("/images/writing-recipe.jpeg");
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: lighten;
+  background-size: 100%;
+  background-repeat: repeat;
+}
+
+.text-background {
+  background-color: rgb(230, 230, 230);
+  padding-bottom: 15px;
+  padding-top: 30px;
+  padding-left: 15px;
+}
+.home {
+  background-image: url("/images/Pantry-unsplash.jpeg");
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: lighten;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+#home-paragraph {
+  background-color: rgb(225, 225, 225);
+  text-align: center;
+}
+
+.recipe-index {
+  background-image: url("/images/recipe-book.jpeg");
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: lighten;
+}
+.pantry-items-index {
+  background-image: url("/images/pantry.jpeg");
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: lighten;
+  background-size: 100%;
+  background-repeat: repeat;
+}
+
+body .pantry-items-index {
+  padding-left: 30px;
+}
+.recipe-show-link {
+  color: #0275d8;
+}
+
+.recipe-show-link:hover {
+  font-size: 16.1px;
+  color: #4d91cd;
+}
+
+.recipe-show {
+  background-image: url("/images/recipe-show.jpeg");
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: lighten;
+  background-size: 100%;
+  background-repeat: repeat;
+}
+/* .recipe-show button {
+  padding-top: 20px;
+} */
+
+body .recipe-show {
+  padding-left: 30px;
+}
+
+/* .flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+} */
+
+img {
+  padding-bottom: 20px;
+  padding-left: 100px;
+  /* padding-right */
+  padding-top: 30px;
+  width: 75%;
+}

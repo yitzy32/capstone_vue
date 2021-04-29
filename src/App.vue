@@ -5,7 +5,7 @@
 
         <!-- Logo -->
           <a href="/" class="logo">
-            <span class="symbol"><img src="images/cabinet.png" alt="" /></span><span class="title">Cabinet Keeper</span>
+            <span class="symbol"><img src="/images/cabinet.png" alt="" /></span><span class="title">Cabinet Keeper</span>
           </a>
 
         <!-- Nav -->
@@ -21,7 +21,7 @@
     <!-- Menu -->
     <nav id="menu">
       <h2>Menu</h2>
-      <ul>
+      <ul id="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/signup">Sign Up</a></li>
         <li><a href="/login">Login</a></li>
@@ -79,9 +79,6 @@
 </template>
 
 <style>
-.centered-text {
-  text-align: center;
-}
 </style>
 <script>
 </script>
