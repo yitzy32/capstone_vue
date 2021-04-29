@@ -16,12 +16,14 @@
     </section> <br><br>
     <h2>Directions:</h2>
     <div v-for="direction in recipe.directions">
+      <b>{{ direction.number }}.</b><br>
       {{ direction.step }}
+      <br><br>
     </div>
     <div v-for="image in recipe.images">
       <img v-bind:src="image.url">
     </div>
-    <button v-on:click="makeRecipe()">Make This Recipe</button>
+    <button class="button primary fit" v-on:click="makeRecipe()">Make This Recipe</button>
     <br><br>
   </div>
 </template>

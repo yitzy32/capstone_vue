@@ -5,6 +5,7 @@
     <div id="home-paragraph">
       <h6>Has it ever happened that you found yourself in the supermarket and wondered "Do I have any more of this at home?" Well worry no more! This app will keep track of all your ingredients so you always know what you have and no more "guess buying." Just proceed to Signup. Acounts are 100% free</h6>
     </div>
+    .
   </div>
 </template>
 

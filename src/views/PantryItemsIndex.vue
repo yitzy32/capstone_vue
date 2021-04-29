@@ -6,6 +6,7 @@
         <div>You Have: <b>{{ pantryItem.measurement_in_ml }}</b> Milliliters of <b>{{ pantryItem.name }}</b></div>
         <br>
         You Have {{ pantryItem.number_of }} {{ pantryItem.name }} 
+        <button v-on:click="pantryItemDestroy(pantryItem)">Remove Item</button>
         <hr>
       </div>
   </div>
@@ -33,6 +34,16 @@ export default {
       axios.get("/api/pantry_items").then((response) => {
         console.log(response.data);
         this.pantryItems = response.data;
+      });
+    },
+    pantryItemDestroy: function (thePantryItem) {
+      console.log("destoyed item");
+      console.log(thePantryItem);
+      var currentId = thePantryItem.id;
+
+      axios.delete("/api/pantry_items/" + currentId).then((response) => {
+        console.log(response.data);
+        window.location.reload();
       });
     },
   },
