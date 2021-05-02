@@ -8,6 +8,7 @@
       </router-link>
     </div> <br><br><br><br><br><br><br><br>
     <a href="/recipes/new"><button class="button primary"> Add New Recipe</button></a>
+    <a href="/recipes/search"><button v-on:click="searchForRecipes()">search for recipes</button></a>
   </div>
 </template>
 

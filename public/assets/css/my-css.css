@@ -83,19 +83,10 @@ body .pantry-items-index {
   background-size: 100%;
   background-repeat: repeat;
 }
-/* .recipe-show button {
-  padding-top: 20px;
-} */
 
 body .recipe-show {
   padding-left: 30px;
 }
-
-/* .flex-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-} */
 
 img {
   padding-bottom: 20px;
@@ -111,4 +102,17 @@ img {
 .form-group {
   text-align: center;
 }
+
+.recipes-search {
+  background-image: url("/images/white-background.jpeg");
+}
+
+.recipes-search button {
+  margin-bottom: 40px;
+}
+
+.recipe-box {
+  margin: .5% .5%;
+  background-color: rgb(231, 255, 255, .5);
+  border: double #434141;
 }

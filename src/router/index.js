@@ -9,6 +9,7 @@ import PantryItemsIndex from '../views/PantryItemsIndex.vue'
 import RecipeCreate from '../views/RecipeCreate.vue'
 import RecipesIndex from '../views/RecipesIndex.vue'
 import RecipeShow from '../views/RecipeShow.vue'
+import RecipesSearch from '../views/RecipesSearch.vue'
 
 Vue.use(VueRouter)
 
@@ -47,6 +48,11 @@ const routes = [
     path: '/recipes',
     name: 'RecipesIndex',
     component: RecipesIndex
+  },
+  {
+    path: '/recipes/search',
+    name: 'RecipesSearch',
+    component: RecipesSearch
   },
   {
     path: '/recipes/new',
