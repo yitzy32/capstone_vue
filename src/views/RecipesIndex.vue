@@ -7,7 +7,7 @@
         <span class="recipe-show-link">{{ recipe.title }}</span> 
       </router-link>
     </div> <br><br><br><br><br><br><br><br>
-    <a href="/recipes/new"><button class="button primary fit"> Add New Recipe</button></a>
+    <a href="/recipes/new"><button class="button primary"> Add New Recipe</button></a>
   </div>
 </template>
 

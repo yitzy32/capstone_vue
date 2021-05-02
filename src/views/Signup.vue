@@ -4,54 +4,24 @@
       <form v-on:submit.prevent="submit()">
         <div class="fields">
           <div class="field whole">
-            <input type="text" name="name" id="name" placeholder="Name" v-model="name"/>
+            <input class="centered-text" type="text" name="name" id="name" placeholder="Name" v-model="name"/>
           </div>
           <div class="field whole">
-            <input type="email" name="email" id="email" placeholder="Email" v-model="email"/>
+            <input class="centered-text" type="email" name="email" id="email" placeholder="Email" v-model="email"/>
           </div>
           <div class="field whole">
-            <input type="password" name="password" id="password" placeholder="Password" v-model="password"/>
+            <input class="centered-text" type="password" name="password" id="password" placeholder="Password" v-model="password"/>
           </div>
           <div class="field whole">
-            <input type="password" name="password" id="password-confirmation" placeholder="Password Confirmation" v-model="passwordConfirmation"/>
+            <input class="centered-text" type="password" name="password" id="password-confirmation" placeholder="Password Confirmation" v-model="passwordConfirmation"/>
             <small v-if="password.length >= 6 && password.length <= 20">You have {{ 20 - password.length }} remaining characters in your password</small>
           </div>
           
         </div>
-        <ul class="actions">
-          <li><input type="submit" value="Signup" class="primary" /></li>
+        <ul class="actions" id="signup-page-button">
+          <li><input type="submit" value="Signup" class="centered-text primary" /></li>
         </ul>
       </form>
-    
-    
-    
-    
-    
-    <!-- <form v-on:submit.prevent="submit()">
-      <h1>Signup</h1>
-      <ul>
-        <li class="text-danger" v-for="error in errors" v-bind:key="error">
-          {{ error }}
-        </li>
-      </ul>
-      <div class="form-group">
-        <label>Name:</label> 
-        <input type="text" class="form-control" v-model="name">
-      </div>
-      <div class="form-group">
-        <label>Email:</label>
-        <input type="email" class="form-control" v-model="email">
-      </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="password" class="form-control" v-model="password">
-      </div>
-      <div class="form-group">
-        <label>Password confirmation:</label>
-        <input type="password" class="form-control" v-model="passwordConfirmation">
-      </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
-    </form> -->
   </div>
 </template>
 

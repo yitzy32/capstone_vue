@@ -39,7 +39,16 @@ h2 {
 
 #home-paragraph {
   background-color: rgb(225, 225, 225);
+  font-size: 20px;
   text-align: center;
+}
+
+#home-paragraph a {
+  text-decoration: underline;
+}
+
+.home h2 {
+  font-size: 25px;
 }
 
 .recipe-index {
@@ -94,4 +103,12 @@ img {
   /* padding-right */
   padding-top: 30px;
   width: 75%;
+}
+.ingredient-name {
+  padding-right: 25px;
+}
+
+.form-group {
+  text-align: center;
+}
 }

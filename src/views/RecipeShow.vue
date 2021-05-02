@@ -1,19 +1,18 @@
 <template>
   <div class="recipe-show">
     <h1>{{ message }}</h1>
-    Title: {{ recipe.title }} <br>
-    Total Prep Time: {{ recipe.prep_time }} <br>
-    Srevings: {{ recipe.servings }} <br><br>
+      <b>Title:</b> {{ recipe.title }} <br>
+      <b>Total Prep Time:</b> {{ recipe.prep_time }} <br>
+      <b>Srevings:</b> {{ recipe.servings }} <br><br>
+    
     <!-- {{recipe}} -->
     <h2>Ingredients:</h2>
-    <section class="flex-container">
-      <div v-for="ingredient in recipe.ingredients">
-        {{ ingredient.name }}
+
+    
+      <div v-for="ingredient in recipe.measurements"> 
+        {{ ingredient.measurement_in_ml }} Milliliters of: <b>{{ ingredient.name  }}:</b> 
       </div>
-      <div v-for="measurement in recipe.measurements">
-        {{ measurement.measurement_in_ml }} Milliliters
-      </div>
-    </section> <br><br>
+    <br><br>
     <h2>Directions:</h2>
     <div v-for="direction in recipe.directions">
       <b>{{ direction.number }}.</b><br>
@@ -23,7 +22,7 @@
     <div v-for="image in recipe.images">
       <img v-bind:src="image.url">
     </div>
-    <button class="button primary fit" v-on:click="makeRecipe()">Make This Recipe</button>
+    <button class="button primary fit large" v-on:click="makeRecipe()">Make This Recipe</button>
     <br><br>
   </div>
 </template>

@@ -53,7 +53,7 @@
       <button v-on:click="addImage()" class="button primary fit">add image</button>
     </p>
     <p>
-      <label for="" class="centered-text">ADD THIS RECIPE:</label> <button v-on:click="createRecipe()" class="button primary fit">ADD</button>
+      <label for="" class="centered-text">ADD THIS RECIPE:</label> <button v-on:click="createRecipe()" class="button primary fit large">ADD</button>
     </p>
     <div v-for="image in images">
       {{ image.url }}

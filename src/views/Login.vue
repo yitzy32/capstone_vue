@@ -7,13 +7,14 @@
         </small>
       <div class="form-group">
         <label>Email:</label>
-        <input type="email" class="form-control" v-model="email">
+        <input type="email" class="form-control centered-text" v-model="email">
       </div>
       <div class="form-group">
         <label>Password:</label>
-        <input type="password" class="form-control" v-model="password">
-      </div>
+        <input type="password" class="form-control centered-text" v-model="password">
+        <br>
       <input type="submit" class="btn btn-primary" value="Submit">
+      </div>
     </form>
   </div>
 </template>

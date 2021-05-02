@@ -151,7 +151,8 @@ input, select, textarea {
 
 	#nav-links {
 		list-style-type: none;
-		font-weight: 700;
+		font-weight: 300;
+		line-height: 35px;
 	}
 
 		a:hover {

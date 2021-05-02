@@ -2,13 +2,18 @@
   <div class="pantry-items-index">
     <h1>{{ message }}</h1>
     <a href="/pantry_items/new"><button>Add An Item To Your Pantry</button></a> <br><hr><br> 
+    
       <div v-for="pantryItem in pantryItems">
         <div>You Have: <b>{{ pantryItem.measurement_in_ml }}</b> Milliliters of <b>{{ pantryItem.name }}</b></div>
         <br>
         You Have {{ pantryItem.number_of }} {{ pantryItem.name }} 
         <button v-on:click="pantryItemDestroy(pantryItem)">Remove Item</button>
         <hr>
+        <dialog class="individual-item">
+          {{ currentPantryItem }}
+        </dialog>
       </div>
+    
   </div>
 </template>
 
@@ -22,6 +27,7 @@ export default {
     return {
       message: "Welcome! These Are The Items In Your Pantry",
       pantryItems: [],
+      currentPantryItem: {},
     };
   },
   mounted: function () {
