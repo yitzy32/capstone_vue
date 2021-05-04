@@ -1,20 +1,21 @@
 <template>
   <div class="recipes-search">
     <h1>{{ message }}</h1>
-    <input type="text" name="search" v-model="search"> <br>
+    <input type="text" v-model="search"> <br>
     <button v-on:click="searchForRecipes()">Search</button> <br>
-
-    <div class="box alt ">
-      <div class="row gtr-uniform">
-        <div class="col-4 recipe-box" v-for="recipe in recipes">
-          <span class="image fit">
-            {{ recipe.title }}
-            <img v-bind:src="recipe.image">
-          </span>
+    <div class="center">
+      <div class="box alt ">
+        <div class="row gtr-uniform">
+          <div class="col-4 recipe-box" v-for="recipe in recipes">
+            <span class="image fit">
+              {{ recipe.title }}
+              <img v-bind:src="recipe.image">
+              <button class="centered-text" v-on:click="addRecipe()">Add</button>
+            </span>
+          </div>
         </div>
       </div>
     </div>
-
 
   </div>
 </template>
@@ -39,11 +40,14 @@ export default {
       var params = {
         search: this.search,
       };
-      axios.get(`/api/recipes/search?search=${this.search}`).then((response) => {
+      axios.get(`/api/api_searches?search=${this.search}`).then((response) => {
         console.log(response.data);
         this.recipes = response.data;
         console.log(params.search);
       });
+    },
+    addRecipe: function () {
+      console.log("adding recipe....");
     },
   },
 };

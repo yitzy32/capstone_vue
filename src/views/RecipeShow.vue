@@ -10,7 +10,7 @@
 
     
       <div v-for="ingredient in recipe.measurements"> 
-        {{ ingredient.measurement_in_ml }} Milliliters of: <b>{{ ingredient.name  }}:</b> 
+        {{ ingredient.measurement_in_ml }} Milliliters of: <b>{{ ingredient.name  }}</b> 
       </div>
     <br><br>
     <h2>Directions:</h2>

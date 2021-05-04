@@ -28,7 +28,7 @@
         <li><a href="/pantry_items">My Pantry Items</a></li>
         <li><a href="/recipes">My Recipes</a></li>
         <li><a href="/logout">Logout</a></li>
-        <li><a href="elements.html">Elements</a></li>
+        <!-- <li><a href="elements.html">Elements</a></li> -->
       </ul>
     </nav>
           
@@ -57,7 +57,6 @@
 					</form>
 				</section>
 				<section>
-					<h2>Follow</h2>
 					<ul class="icons">
 						<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
 						<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>

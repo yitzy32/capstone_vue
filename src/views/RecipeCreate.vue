@@ -16,47 +16,53 @@
     <p>
       <label for="" class="centered-text">Source Url:</label> <input class="centered-text" type="text" v-model="recipes[recipes.length - 1].source_url">
     </p>
-
     <button v-on:click="addRecipe()" class="button primary fit">Add This Info</button>
     <div v-for="recipe in recipes">
       {{ recipe.title }}{{ recipe.prep_time }}{{ recipe.servings }}{{ recipe.source_url }}
     </div>
-    <p>
-      <label for="" class="centered-text">Direction Number:</label> <input class="centered-text" type="text" v-model="directions[directions.length - 1].number">
-    </p>
-    <p>
-      <label for="" class="centered-text">Direction Instruction:</label> <input class="centered-text" type="text" v-model="directions[directions.length - 1].step">
-    </p>
-    <button v-on:click="addDirection()" class="button primary fit">Add This Direction</button>
-    <div v-for="direction in directions">
-    {{ direction.number }}{{ direction.step }}
-    </div>
-
-    <p>
-      <label for="" class="centered-text">Ingredient Name:</label>
-      <select id="" v-model="ingredients[ingredients.length -1].name">
-        <option v-for="ingredientFromDb in ingredientsFromDb" v-bind:value="ingredientFromDb.name">
-          {{ ingredientFromDb.name }}
-        </option>
-      </select>
-      
-      <label for="" class="centered-text">How Many Milliliters:</label> 
-      <input class="centered-text" type="text" v-model="ingredients[ingredients.length - 1].measurement_in_ml">
-      <label class="centered-text">Or Number Of: <small>(like eggs, apples..)</small></label> <input class="centered-text" type="text" v-model="ingredients[ingredients.length - 1].number_of">
-    </p>
-    <button v-on:click="addIngredient()" class="button primary fit">add ingredient</button>
-      <div v-for="ingredient in ingredients">
-      {{ ingredient.name }} {{ ingredient.measurement_in_ml }} {{ ingredient.number_of }}
+    <div v-show="isRecipeAdded">
+      <p>
+        <label for="" class="centered-text">Direction Number:</label> <input class="centered-text" type="text" v-model="directions[directions.length - 1].number">
+      </p>
+      <p>
+        <label for="" class="centered-text">Direction Instruction:</label> <input class="centered-text" type="text" v-model="directions[directions.length - 1].step">
+      </p>
+      <button v-on:click="addDirection()" class="button primary fit">Add This Direction</button>
+      <div v-for="direction in directions">
+      {{ direction.number }}{{ direction.step }}
       </div>
-    <p>
-      <label for="" class="centered-text">Image Url:</label> <input class="centered-text" type="text" v-model="images[images.length - 1].url">
-      <button v-on:click="addImage()" class="button primary fit">add image</button>
-    </p>
-    <p>
-      <label for="" class="centered-text">ADD THIS RECIPE:</label> <button v-on:click="createRecipe()" class="button primary fit large">ADD</button>
-    </p>
-    <div v-for="image in images">
-      {{ image.url }}
+      <div v-show="isDirectionAdded">
+        <p>
+        <label for="" class="centered-text">Ingredient Name:</label>
+        <select id="" v-model="ingredients[ingredients.length -1].name">
+          <option v-for="ingredientFromDb in ingredientsFromDb" v-bind:value="ingredientFromDb.name">
+            {{ ingredientFromDb.name }}
+          </option>
+        </select>
+        
+        <label for="" class="centered-text">How Many Milliliters:</label> 
+        <input class="centered-text" type="text" v-model="ingredients[ingredients.length - 1].measurement_in_ml">
+        <!-- <label class="centered-text">Or Number Of: <small>(like eggs, apples..)</small></label> <input class="centered-text" type="text" v-model="ingredients[ingredients.length - 1].number_of"> -->
+        </p>
+        <button v-on:click="addIngredient()" class="button primary fit">add ingredient</button>
+          <div v-for="ingredient in ingredients">
+          <!-- {{ ingredient.name }} {{ ingredient.measurement_in_ml }} {{ ingredient.number_of }} -->
+          </div>
+        <div v-show="isIngredientAdded">
+          <p>
+            <label for="" class="centered-text">Image Url:</label> <input class="centered-text" type="text" v-model="images[images.length - 1].url">
+            <button v-on:click="addImage()" class="button primary fit">add image</button>
+          </p>
+          <div v-show="isImageAdded">
+            <p>
+              <button v-on:click="createRecipe()" class="button primary fit large" >ADD THIS RECIPE</button>
+            </p>
+            <div v-for="image in images">
+              {{ image.url }}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -75,6 +81,10 @@ export default {
       ingredients: [{ id: "", name: "", measurement_in_ml: "", number_of: "" }],
       images: [{ url: "" }],
       ingredientsFromDb: [],
+      isRecipeAdded: false,
+      isDirectionAdded: false,
+      isIngredientAdded: false,
+      isImageAdded: false,
     };
   },
   created: function () {
@@ -101,19 +111,22 @@ export default {
     },
     addRecipe: function () {
       console.log("adding recipe...");
-      // this.recipes.push({ title: "", prep_time: "", servings: "", source_url: "" }); DELETED THIS LINE AND CODE SAVED TO THE DB.
+      this.isRecipeAdded = !this.isRecipeAdded;
     },
     addDirection: function () {
       console.log("adding direction...");
       this.directions.push({ number: "", step: "" });
+      this.isDirectionAdded = !this.isDirectionAdded;
     },
     addIngredient: function () {
       console.log("adding ingredient...");
       this.ingredients.push({ name: "" });
+      this.isIngredientAdded = !this.isIngredientAdded;
     },
     addImage: function () {
       console.log("adding image...");
       this.images.push({ url: "" });
+      this.isImageAdded = !this.isImageAdded;
     },
   },
 };

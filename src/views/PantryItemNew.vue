@@ -1,25 +1,26 @@
 <template>
-  <div class="home">
+  <div class="pantry-item-new">
     <h1>{{ message }}</h1>
 
     <form v-on:submit.prevent="newIngredient()" class="centered-text">
-      <label for="">Ingredient Name</label>
+      <span class="pantry-item-fade"><label for="">Ingredient Name</label></span>
       <input type="text" v-model="newIngredientName" class="centered-text">
-      <input type="submit" value="ADD IGREDIENT NAME" class="button primary fit">
+      <input type="submit" value="ADD INGREDIENT NAME" class="button primary fit">
     </form>
-
-    <form v-on:submit.prevent="newPantryItem()" class="centered-text">
-      <small v-for="error in errors">
-        {{ error }}
-      </small>
-      <!-- <p> name: <p v-model="newIngredientName"></p></p> -->
-      <p> How Many Milliliters: <input type="text" v-model="newMeasurementInMl"></p>
-      <p> Or Number Of: <small>(like for eggs or apples..)</small> <input type="text" v-model="newNumberOf"></p>
-      <p>ADD ITEM</p>
-      <p><input type="submit" value="ADD THIS TO YOUR PANTRY" class="button primary fit"> <br/><br/></p>
-    </form>
-
+    <div v-show="hasAddedName">
+      <form v-on:submit.prevent="newPantryItem()" class="centered-text">
+        <small v-for="error in errors">
+          {{ error }}
+        </small>
+        <!-- <p> name: <p v-model="newIngredientName"></p></p> -->
+        <p> How Many Milliliters: <input type="text" v-model="newMeasurementInMl"></p>
+        <p> Or Number Of: <small>(like for eggs or apples..)</small> <input type="text" v-model="newNumberOf"></p>
+        <p><input type="submit" value="ADD THIS TO YOUR PANTRY" class="button primary large fit"> <br/><br/></p>
+      </form>
+    </div>
   </div>
+  <!-- <p> How Many Milliliters: <input v-bind:disabled="isDisabled" type="text" v-model="newMeasurementInMl"></p>
+  <p> Or Number Of: <small>(like for eggs or apples..)</small> <input v-bind:disabled="!isDisabled" type="text" v-model="newNumberOf"></p> -->
 </template>
 
 <style>
@@ -36,7 +37,9 @@ export default {
       newIngredientId: "",
       newMeasurementInMl: "",
       newNumberOf: "",
+      hasAddedName: false,
       errors: [],
+      isDisabled: false,
     };
   },
   created: function () {
@@ -53,6 +56,7 @@ export default {
         console.log(response.data);
         console.log(response.data.id);
         this.newIngredientId = response.data.id;
+        this.hasAddedName = !this.hasAddedName;
       });
     },
 

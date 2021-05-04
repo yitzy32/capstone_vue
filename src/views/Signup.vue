@@ -14,7 +14,6 @@
           </div>
           <div class="field whole">
             <input class="centered-text" type="password" name="password" id="password-confirmation" placeholder="Password Confirmation" v-model="passwordConfirmation"/>
-            <small v-if="password.length >= 6 && password.length <= 20">You have {{ 20 - password.length }} remaining characters in your password</small>
           </div>
           
         </div>
