@@ -78,7 +78,7 @@ export default {
       message: "Add A Recipe",
       recipes: [{ title: "", prep_time: "", servings: "", source_url: "" }],
       directions: [{ number: "", step: "" }],
-      ingredients: [{ id: "", name: "", measurement_in_ml: "", number_of: "" }],
+      ingredients: [{ name: "", measurement_in_ml: "", number_of: "" }],
       images: [{ url: "" }],
       ingredientsFromDb: [],
       isRecipeAdded: false,
@@ -104,10 +104,14 @@ export default {
         images: this.images,
         // ingredient_recipes?????????????????
       };
-
+      console.log("this.ingredients");
+      console.log(this.ingredients);
+      console.log("this.ingredients");
+      console.log(this.ingredients.pop());
       axios.post("/api/recipes", params).then((response) => {
         console.log(response.data);
       });
+      this.$router.push("/recipes");
     },
     addRecipe: function () {
       console.log("adding recipe...");
@@ -120,7 +124,7 @@ export default {
     },
     addIngredient: function () {
       console.log("adding ingredient...");
-      this.ingredients.push({ name: "" });
+      this.ingredients.push({ name: "", measurement_in_ml: "", number_of: "" });
       this.isIngredientAdded = !this.isIngredientAdded;
     },
     addImage: function () {
