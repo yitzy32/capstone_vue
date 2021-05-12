@@ -10,7 +10,7 @@
             <span class="image fit">
               {{ recipe.title }}
               <img v-bind:src="recipe.image">
-              <button class="centered-text" v-on:click="addRecipe()">Add</button>
+              <button class="centered-text" v-on:click="addRecipe()" disabled>Add</button>
             </span>
           </div>
         </div>

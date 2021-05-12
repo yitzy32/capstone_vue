@@ -17,9 +17,9 @@
       <label for="" class="centered-text">Source Url:</label> <input class="centered-text" type="text" v-model="recipes[recipes.length - 1].source_url">
     </p>
     <button v-on:click="addRecipe()" class="button primary fit">Add This Info</button>
-    <div v-for="recipe in recipes">
-      {{ recipe.title }}{{ recipe.prep_time }}{{ recipe.servings }}{{ recipe.source_url }}
-    </div>
+    <br><br>  
+    <button v-on:click="toDirectionsNext" class="button primary fit">Next Step</button>
+      
     <div v-show="isRecipeAdded">
       <p>
         <label for="" class="centered-text">Direction Number:</label> <input class="centered-text" type="text" v-model="directions[directions.length - 1].number">
@@ -29,8 +29,10 @@
       </p>
       <button v-on:click="addDirection()" class="button primary fit">Add This Direction</button>
       <div v-for="direction in directions">
-      {{ direction.number }}{{ direction.step }}
+      <!-- {{ direction.number }}{{ direction.step }} -->
       </div>
+      <br><br>
+      <button v-on:click="toIngredientsNext" class="button primary fit">Next Step</button>
       <div v-show="isDirectionAdded">
         <p>
         <label for="" class="centered-text">Ingredient Name:</label>
@@ -48,6 +50,8 @@
           <div v-for="ingredient in ingredients">
           <!-- {{ ingredient.name }} {{ ingredient.measurement_in_ml }} {{ ingredient.number_of }} -->
           </div>
+          <br><br>
+          <button v-on:click="toImagesNext" class="button primary fit">Next Step</button>
         <div v-show="isIngredientAdded">
           <p>
             <label for="" class="centered-text">Image Url:</label> <input class="centered-text" type="text" v-model="images[images.length - 1].url">
@@ -58,7 +62,7 @@
               <button v-on:click="createRecipe()" class="button primary fit large" >ADD THIS RECIPE</button>
             </p>
             <div v-for="image in images">
-              {{ image.url }}
+              <!-- {{ image.url }} -->
             </div>
           </div>
         </div>
@@ -115,16 +119,22 @@ export default {
     },
     addRecipe: function () {
       console.log("adding recipe...");
+    },
+    toDirectionsNext: function () {
       this.isRecipeAdded = !this.isRecipeAdded;
     },
     addDirection: function () {
       console.log("adding direction...");
       this.directions.push({ number: "", step: "" });
+    },
+    toIngredientsNext: function () {
       this.isDirectionAdded = !this.isDirectionAdded;
     },
     addIngredient: function () {
       console.log("adding ingredient...");
       this.ingredients.push({ name: "", measurement_in_ml: "", number_of: "" });
+    },
+    toImagesNext: function () {
       this.isIngredientAdded = !this.isIngredientAdded;
     },
     addImage: function () {
