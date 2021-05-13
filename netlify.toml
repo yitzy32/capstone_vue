@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/"
+  to = "https://practical-villani-ccdc91.netlify.app/login"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
